@@ -1,0 +1,212 @@
+body {
+  font-family: "Oswald", sans-serif !important;
+}
+/* HEADER  */
+
+.navbar {
+  background-color: #185893;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+.nav-link:hover {
+  color: #e06f24 !important;
+}
+
+.espace a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Page licence  */
+.container h3 {
+  color: #185893;
+}
+
+#titre-licence {
+  background-color: #e06f24;
+  height: 60px;
+}
+
+#titre-licence h3 {
+  color: black;
+}
+
+/* footer */
+
+footer {
+  background-color: #185893;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Animation page accueil */
+.alrazy-title {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 6vw;
+  font-size: calc(100vw / var(--char-total));
+  position: relative;
+  padding: 0.4em 0;
+  overflow: hidden;
+  text-align: center;
+  color: #185893;
+}
+.alrazy-title:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: solid 0.2em;
+  -webkit-animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+  animation: underline 1s cubic-bezier(0.8, 0, 0, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  color: #e06f24;
+}
+@-webkit-keyframes underline {
+  from {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+}
+@keyframes underline {
+  from {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+}
+.alrazy-title .word {
+  display: inline-block;
+  -webkit-animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+  animation: slide-up 1.25s cubic-bezier(0.5, 0.2, 0, 1);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-delay: calc(0.5s + (0.1s * var(--word-index)));
+  animation-delay: calc(0.5s + (0.1s * var(--word-index)));
+}
+@-webkit-keyframes slide-up {
+  from {
+    -webkit-transform: translateY(125%);
+    transform: translateY(125%);
+  }
+}
+@keyframes slide-up {
+  from {
+    -webkit-transform: translateY(125%);
+    transform: translateY(125%);
+  }
+}
+.splitting-mark {
+  color: #fff !important;
+}
+
+.user_card {
+  height: 400px;
+  width: 350px;
+  margin-top: 10%;
+  margin-bottom: auto;
+  background: #e06f24;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+.brand_logo_container {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  top: -75px;
+  border-radius: 50%;
+  background: white;
+  padding: 10px;
+  text-align: center;
+}
+.brand_logo {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 5px solid #185893;
+}
+.form_container {
+  margin-top: 100px;
+}
+.login_btn {
+  width: 100%;
+  background: #185893 !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #c0392b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #c0392b !important;
+}
+.input-group-text {
+  background: #185893 !important;
+}
+.signup {
+  color: white;
+}
+.signup a {
+  color: white;
+}
+/* Tableau page d'accueil */
+.accueil {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 30px;
+}
+.accueil td {
+  border: 1px solid black;
+  padding: 50px;
+  height: 500px;
+}
+.consulter {
+  background-image: url("../images/slide/img1.jpg");
+  background-size: 1000px;
+  position: relative;
+}
+
+.consulter h3 {
+  color: #fff !important;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.ajouter {
+  background-image: url("../images/slide/img2.jpg");
+  background-size: 1000px;
+  position: relative;
+}
+
+.ajouter h3 {
+  color: #fff !important;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
