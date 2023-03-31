@@ -29,12 +29,6 @@
                         <a class="nav-link active" aria-current="page" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="list_annonce.php">Voir nos Annonces</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="form_annonce.php">Ajouter Annonce</a>
-                    </li>
                 </ul>
             </div>
         </div>

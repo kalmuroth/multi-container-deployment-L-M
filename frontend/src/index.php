@@ -21,7 +21,7 @@
     </table>
 </div>
 <div class="container pt-4">
-    <h3>Nos 15 dernières annonces</h3>
+    <h3>Connection à la db</h3>
     <hr>
 </div>
 <div class="container pt-4">
