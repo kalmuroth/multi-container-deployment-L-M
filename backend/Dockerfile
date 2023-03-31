@@ -1,4 +1,4 @@
-FROM mysql:8.0.32
+FROM mysql:8.0.32 AS AS development
 
 MAINTAINER me
 
