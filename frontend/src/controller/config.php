@@ -1,8 +1,7 @@
 <?php
-$db_host = '35.177.26.109';
-$db_user = 'root';
-$db_port = 3306;
-$db_password = 'MYSQL_ROOT_PASSWORD';
+$db_host = 'db';
+$db_user = 'MYSQL_USER';
+$db_password = 'MYSQL_PASSWORD';
 
 try {
     $conn = new PDO("mysql:host=$db_host;dbname=projet_bon_coin", $db_user, $db_password);
