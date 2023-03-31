@@ -1,6 +1,6 @@
 <?php include('./header.php') ?>
 <div class="alrazy-title" data-splitting>
-    Nos SUPERBES Annonces
+    Nos Annonces
 </div>
 <!-- Script qui génére l'animation -->
 <script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
@@ -11,10 +11,10 @@
 <div class="container pt-4">
     <table class="accueil">
         <tr>
-            <td class="consulter"> <a href="./list_annonce.php">
+            <td class="consulter">
                     <h3>Consulter toutes les annonces</h3>
                 </a></td>
-            <td class="ajouter"> <a href="./form_annonce.php">
+            <td class="ajouter">
                     <h3>Ajouter une annonce</h3>
                 </a> </td>
         </tr>
