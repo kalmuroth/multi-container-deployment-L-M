@@ -17,18 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Execute SSH commmands on remote server
-        uses: ian-whitestone/action-ssh@master
+      - uses: actions/checkout@v2 
+      - name: Deploy in EC2
         env:
-          PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          HOSTNAME: ${{ secrets.HOSTNAME }}
-          USER_NAME: ${{ secrets.USER_NAME }}
-        with:
-          hosts: 'ubuntu@ec2-35-177-26-109.eu-west-2.compute.amazonaws.com'
-          privateKey: ${{ secrets.PRIVATE_KEY }}
-          port: 22
-          debug: false
-          command: |
-            ls -lah
+            PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+            HOSTNAME : ${{ secrets.HOSTNAME  }}
+            USER_NAME : ${{ secrets.USER_NAME  }}
+            
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+          
+            #Now we have got the access of EC2 and we will start the deploy .
             hostname -a
-            whoami
+          '
