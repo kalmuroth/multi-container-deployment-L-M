@@ -17,11 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          HOSTNAME: ${{ secrets.HOSTNAME }}
+          USER_NAME: ${{ secrets.USERNAME }}
         with:
-          key: ${{ secrets.EC2_SSH_KEY  }}
-          host: ${{ secrets.HOSTNAME  }}
-          username: ${{ secrets.USER_NAME  }}
-          script: |
+          hosts: '${USER_NAME}@${HOSTNAME}'
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          debug: false
+          command: |
+            ls -lah
             hostname -a
+            whoami
