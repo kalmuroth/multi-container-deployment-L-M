@@ -24,5 +24,4 @@ jobs:
           host: ${{ secrets.HOSTNAME  }}
           username: ${{ secrets.USER_NAME  }}
           script: |
-            cd ../../var &&
-            ls
+            hostname -a
