@@ -25,5 +25,6 @@ jobs:
           username: ${{ secrets.USER_NAME  }}
           script: |
             cd ../ &&
+            cd ../ &&
             ls &&
             pwd
