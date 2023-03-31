@@ -1,0 +1,44 @@
+services:
+  frontend:
+    build:
+      context: frontend
+      target: development
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: always
+    networks:
+      - php-app
+    depends_on:
+      - backend
+
+  backend:
+    restart: always
+    build:
+      context: backend
+      target: development
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mysql
+    networks:
+      - mysql-backend
+      - php-app
+    expose: 
+      - 3000
+  mysql:
+    restart: always
+    image: mysql:8.0.32
+    volumes:
+      - ./data:/data/db
+    networks:
+      - mysql-backend
+    expose:
+      - 27017
+networks:
+  php-app:
+  mysql-backend:

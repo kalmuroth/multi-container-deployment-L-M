@@ -1,7 +1,7 @@
 <?php
 $db_host = 'localhost';
 $db_user = 'root';
-$db_port = 8889;
+$db_port = 3306;
 
 
 try {
