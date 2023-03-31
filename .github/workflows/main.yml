@@ -24,7 +24,7 @@ jobs:
           HOSTNAME: ${{ secrets.HOSTNAME }}
           USER_NAME: ${{ secrets.USER_NAME }}
         with:
-          hosts: '${USER_NAME}@${HOSTNAME}'
+          hosts: 'ec2-35-177-26-109.eu-west-2.compute.amazonaws.com'
           privateKey: ${{ secrets.PRIVATE_KEY }}
           debug: false
           command: |
