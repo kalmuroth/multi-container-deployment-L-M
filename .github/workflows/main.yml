@@ -26,7 +26,7 @@ jobs:
         with:
           hosts: 'ubuntu@ec2-35-177-26-109.eu-west-2.compute.amazonaws.com'
           privateKey: ${{ secrets.PRIVATE_KEY }}
-          port: '22'
+          port: 22
           debug: false
           command: |
             ls -lah
