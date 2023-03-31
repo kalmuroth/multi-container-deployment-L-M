@@ -22,7 +22,7 @@ jobs:
         env:
           PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           HOSTNAME: ${{ secrets.HOSTNAME }}
-          USER_NAME: ${{ secrets.USERNAME }}
+          USER_NAME: ${{ secrets.USER_NAME }}
         with:
           hosts: '${USER_NAME}@${HOSTNAME}'
           privateKey: ${{ secrets.PRIVATE_KEY }}
