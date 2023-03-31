@@ -1,44 +1,24 @@
+version: '3.8'
 services:
-  frontend:
-    build:
-      context: frontend
-      target: development
-    ports:
-      - 3000:3000
-    stdin_open: true
-    volumes:
-      - ./frontend:/usr/src/app
-      - /usr/src/app/node_modules
-    restart: always
-    networks:
-      - php-app
-    depends_on:
-      - backend
-
-  backend:
-    restart: always
-    build:
-      context: backend
-      target: development
-    volumes:
-      - ./backend:/usr/src/app
-      - /usr/src/app/node_modules
-    depends_on:
-      - mysql
-    networks:
-      - mysql-backend
-      - php-app
-    expose: 
-      - 3000
-  mysql:
-    restart: always
-    image: mysql:8.0.32
-    volumes:
-      - ./data:/data/db
-    networks:
-      - mysql-backend
-    expose:
-      - 27017
-networks:
-  php-app:
-  mysql-backend:
+    php-apache-environment:
+        container_name: php-apache
+        build:
+            context: ./php
+            dockerfile: Dockerfile
+        depends_on:
+            - db
+        volumes:
+            - ./php/src:/var/www/html/
+        ports:
+            - 8000:80
+    db:
+        container_name: db
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+            MYSQL_DATABASE: MYSQL_DATABASE
+            MYSQL_USER: MYSQL_USER
+            MYSQL_PASSWORD: MYSQL_PASSWORD
+        ports:
+            - "9906:3306"
