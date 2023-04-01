@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - name: Run checkout
     - uses: actions/checkout@v2
+    
+    - name: Run Cypress Unit Test
+      uses: cypress-io/github-action@v4
+      with:
+        command: npx cypress run
+        browser: chrome
 
   Deploy:
     needs: build
