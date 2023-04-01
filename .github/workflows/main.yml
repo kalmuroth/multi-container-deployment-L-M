@@ -16,11 +16,10 @@ jobs:
       - name: Start Docker Compose
         run: docker-compose up -d
 
-      - name: Run Cypress Unit Test
-        uses: cypress-io/github-action@v4
-        with:
-          command: npx cypress run
-          browser: chrome
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v3
+        env:
+          TEST_NAME: Scarlett
 
   Deploy:
     needs: build
