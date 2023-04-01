@@ -14,15 +14,8 @@ jobs:
 
       - uses: php-actions/composer@v6
 
-      - name: PHPUnit Tests
+      - name: PHPUnit tests
         uses: php-actions/phpunit@v3
-        env:
-          TEST_NAME: Scarlett
-        with:
-          bootstrap: vendor/autoload.php
-          configuration: test/phpunit.xml
-          args: --coverage-text
-          php_version: "7.3"
 
   Deploy:
     needs: build
