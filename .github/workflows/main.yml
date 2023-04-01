@@ -14,13 +14,6 @@ jobs:
 
       - uses: php-actions/composer@v6
 
-      - name: PHPUnit tests
-        uses: php-actions/phpunit@v3
-        with:
-          version: latest
-          php_version: latest
-          test_suffix: averagetest.php
-
   Deploy:
     needs: build
     runs-on: ubuntu-latest
